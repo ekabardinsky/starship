@@ -1,0 +1,50 @@
+<html>
+<head>
+    <link rel="stylesheet" href="/css/angular-material.min.css">
+    <script src="/js/lib/angular.min.js"></script>
+    <script src="/js/lib/angular-animate.min.js"></script>
+    <script src="/js/lib/angular-aria.min.js"></script>
+    <script src="/js/lib/angular-messages.min.js"></script>
+    <script src="/js/lib/angular-material.min.js"></script>
+    <script src="/js/utils.js"></script>
+    <!-- chart dependencies -->
+    <!-- Load c3.css -->
+    <link href="/css/c3.css" rel="stylesheet" type="text/css">
+    <!-- Load d3.js and c3.js -->
+    <script src="/js/lib/d3.v3.min.js" charset="utf-8"></script>
+    <script src="/js/lib/c3.js"></script>
+    <!-- angular C3 simple -->
+    <script src="/js/lib/angular_c3_simple.js"></script>
+    <!-- controller -->
+    <script src="/js/controller/index.js"></script>
+</head>
+<body ng-app="StarShip">
+<div ng-controller="indexController">
+    <div>
+        <c3-simple ng-attr-id="chart" config="chart"></c3-simple>
+
+        <div layout="row" layout-align="center">
+            <md-button class="md-raised md-primary" ng-click="start()">Start</md-button>
+            <md-button class="md-raised md-primary" ng-click="stop()">Stop</md-button>
+            <md-button class="md-raised md-primary" ng-click="renew()">Renew</md-button>
+        </div>
+        <br>
+        <div layout="column" layout-align="center center" >
+            <md-slider-container style="width: 300px">
+                <span>Adding days {{addTime}}</span>
+                <md-slider min="0" max="365" ng-model="addTime" aria-label="addTime" id="blue-slider"/>
+            </md-slider-container>
+
+            <md-input-container class="md-block" flex-gt-sm style="width: 300px">
+                <label>State</label>
+                <md-select ng-model="plotField">
+                    <md-option ng-repeat="field in fields" value="{{field.value}}">
+                        {{field.text}}
+                    </md-option>
+                </md-select>
+            </md-input-container>
+        </div>
+    </div>
+</div>
+</body>
+</html>

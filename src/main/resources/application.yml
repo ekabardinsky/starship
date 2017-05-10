@@ -1,0 +1,6 @@
+language:
+  properties:
+    en:
+      title: "Some title"
+    ru:
+      title: "Какой то заголовок"
