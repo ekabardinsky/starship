@@ -8,6 +8,7 @@ Before assembling and run the project you should install some additional softwar
 *Apache Maven 3.* - https://maven.apache.org/install.html
 
 #Build the project
+
 CD to project directory, and run follow command:
 ```
 mvn clean package
